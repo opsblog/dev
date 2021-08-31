@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dev.opsblog.de/search/</loc>
+    <lastmod>2020-10-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dev.opsblog.de/datenschutz/</loc>
+    <lastmod>2018-05-24T20:55:41+00:00</lastmod>
+  </url><url>
+    <loc>https://dev.opsblog.de/kontakt/</loc>
+    <lastmod>2010-11-11T23:20:36+00:00</lastmod>
+  </url><url>
+    <loc>https://dev.opsblog.de/impressum/</loc>
+    <lastmod>2009-01-15T16:42:26+00:00</lastmod>
+  </url><url>
+    <loc>https://dev.opsblog.de/categories/</loc>
+  </url><url>
+    <loc>https://dev.opsblog.de/</loc>
+  </url><url>
+    <loc>https://dev.opsblog.de/tags/</loc>
+  </url>
+</urlset>
