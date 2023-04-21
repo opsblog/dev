@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de" data-theme=""><head>
-    <title> opsblog.de | Impressum </title>
+    <title> opsblog.de | curl: einfacher Datei-Upload nach Nextcloud </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.105.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="/impressum/">
+    <link rel="canonical" href="/2023/04/20/curl_nextcloud/">
 
     
     
@@ -52,12 +52,14 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dev.opsblog.de/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="Impressum"/>
-<meta name="twitter:description" content="Impressum Anschrift:
-Sven Schmalle
-Waller Heerstraße 184b
-28219 Bremen
-sven@opsblog.de"/>
+<meta name="twitter:title" content="curl: einfacher Datei-Upload nach Nextcloud"/>
+<meta name="twitter:description" content="Hier ein kurzer Befehl um mit curl einen Datei-Upload an Nextcloud zu ermöglichen:
+curl -T ./test.txt -u &#39;USER:PASSWD&#39; &#34;https://nc.domain.de/nextcloud/remote.php/dav/files/USER/test.txt&#34;
+Da Nextcloud über WebDav angesprochen werden kann und curl über den Schalter -T (--upload-file) ein Datei-Upload macht,
+kann man dies gut dazu verwenden um eben Dateien an Nextcloud zu senden.
+Man braucht dafür nur die Adresse der Nextcloud-Instanz, welche man nutzen will und spricht dann mit curl den Teil remote.php/dav/files/USER der URL an.
+In diesem Beispiel wird die Datei text.txt aus dem aktuellen Verzeichnis in das root-Verzeichnis des Nextcloud-Benutzers USER
+unter verwendung des Benutzernamen USER und dem Passwort PASSWD hoch geladen."/>
 
 
     
@@ -145,7 +147,7 @@ sven@opsblog.de"/>
                    title="">Datenschutz</a></li>
         
             
-            <li><a class="current"
+            <li><a 
                    href="/impressum/"
                         
                    title="">Impressum</a></li>
@@ -167,29 +169,43 @@ sven@opsblog.de"/>
         <div class="post-content">
             
             <div class="post-title">
-                <h3>Impressum</h3>
+                <h3>curl: einfacher Datei-Upload nach Nextcloud</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                20.04.2023 - 21:14 Uhr
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">1 Minute zum Lesen</span>
+                    </div>
                 
             </div>
 
-            <h4 id="impressum">Impressum</h4>
-<p><strong>Anschrift:</strong><br>
-Sven Schmalle<br>
-Waller Heerstraße 184b<br>
-28219 Bremen<br>
-<a href="mailto:sven@opsblog.de">sven@opsblog.de</a><br>
-Telefon: auf anfrage</p>
-<p><strong>Rechtlicher Hinweis:</strong><br>
-Die meisten Inhalte meiner Homepage unterliegen dem deutschen Urheberrecht und sind mein Eigentum.<br>
-Die Benutzung ausserhalb meiner Homepage in jeglicher Form(Online sowie Print) ist untersagt, solange keine spezielle Erlaubnis von mir gegeben wurde. Informationen zur Nutzung meines Bildmaterials erhalten Sie per Email. Bilder anderer Personen auf meiner Homepage, sind deren Eigentum und nur mit ihrer Erlaubnis hier eingestellt.</p>
-</div>
+            <p>Hier ein kurzer Befehl um mit curl einen Datei-Upload an Nextcloud zu ermöglichen:</p>
+<pre tabindex="0"><code>curl -T ./test.txt -u &#39;USER:PASSWD&#39; &#34;https://nc.domain.de/nextcloud/remote.php/dav/files/USER/test.txt&#34;
+</code></pre><p>Da Nextcloud über WebDav angesprochen werden kann und curl über den Schalter <code>-T</code> (<code>--upload-file</code>) ein Datei-Upload macht,
+kann man dies gut dazu verwenden um eben Dateien an Nextcloud zu senden.<br>
+Man braucht dafür nur die Adresse der Nextcloud-Instanz, welche man nutzen will und spricht dann mit curl den Teil <code>remote.php/dav/files/USER</code> der URL an.</p>
+<p>In diesem Beispiel wird die Datei <code>text.txt</code> aus dem aktuellen Verzeichnis in das root-Verzeichnis des Nextcloud-Benutzers <code>USER</code>
+unter verwendung des Benutzernamen <code>USER</code> und dem Passwort <code>PASSWD</code> hoch geladen.</p></div>
         <div class="post-footer">
             <div class="info">
-                
+                <span class="separator"><a class="category" href="/categories/sonstiges/">Sonstiges</a><a class="category" href="/categories/linux/">Linux</a><a class="category" href="/categories/windows/">Windows</a></span>
                 
             </div>
         </div>
 		
         
+			<script src="https://utteranc.es/client.js"
+					repo="opsblog/dev"
+					issue-term="pathname"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+			
+			<div id="hashover"></div>
     </div>
 
 

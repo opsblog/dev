@@ -5,6 +5,52 @@
     <link>https://dev.opsblog.de/categories/</link>
     <description>Recent content in Categories on dev.opsblog.de</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de</language><atom:link href="https://dev.opsblog.de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>de</language>
+    <lastBuildDate>Thu, 20 Apr 2023 21:14:00 +0000</lastBuildDate><atom:link href="https://dev.opsblog.de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://dev.opsblog.de/categories/linux/</link>
+      <pubDate>Thu, 20 Apr 2023 21:14:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sonstiges</title>
+      <link>https://dev.opsblog.de/categories/sonstiges/</link>
+      <pubDate>Thu, 20 Apr 2023 21:14:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/categories/sonstiges/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://dev.opsblog.de/categories/windows/</link>
+      <pubDate>Thu, 20 Apr 2023 21:14:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/categories/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://dev.opsblog.de/categories/powershell/</link>
+      <pubDate>Thu, 20 Apr 2023 21:00:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/categories/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://dev.opsblog.de/categories/docker/</link>
+      <pubDate>Thu, 20 Apr 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/categories/docker/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

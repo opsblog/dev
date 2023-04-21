@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on dev.opsblog.de</title>
+    <link>https://dev.opsblog.de/categories/linux/</link>
+    <description>Recent content in Linux on dev.opsblog.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Thu, 20 Apr 2023 21:14:00 +0000</lastBuildDate><atom:link href="https://dev.opsblog.de/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>curl: einfacher Datei-Upload nach Nextcloud</title>
+      <link>https://dev.opsblog.de/2023/04/20/curl_nextcloud/</link>
+      <pubDate>Thu, 20 Apr 2023 21:14:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/2023/04/20/curl_nextcloud/</guid>
+      <description>&lt;p&gt;Hier ein kurzer Befehl um mit curl einen Datei-Upload an Nextcloud zu ermöglichen:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -T ./test.txt -u &amp;#39;USER:PASSWD&amp;#39; &amp;#34;https://nc.domain.de/nextcloud/remote.php/dav/files/USER/test.txt&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Da Nextcloud über WebDav angesprochen werden kann und curl über den Schalter &lt;code&gt;-T&lt;/code&gt; (&lt;code&gt;--upload-file&lt;/code&gt;) ein Datei-Upload macht,
+kann man dies gut dazu verwenden um eben Dateien an Nextcloud zu senden.&lt;br&gt;
+Man braucht dafür nur die Adresse der Nextcloud-Instanz, welche man nutzen will und spricht dann mit curl den Teil &lt;code&gt;remote.php/dav/files/USER&lt;/code&gt; der URL an.&lt;/p&gt;
+&lt;p&gt;In diesem Beispiel wird die Datei &lt;code&gt;text.txt&lt;/code&gt; aus dem aktuellen Verzeichnis in das root-Verzeichnis des Nextcloud-Benutzers &lt;code&gt;USER&lt;/code&gt;
+unter verwendung des Benutzernamen &lt;code&gt;USER&lt;/code&gt; und dem Passwort &lt;code&gt;PASSWD&lt;/code&gt; hoch geladen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Powershell unter Linux in Docker-Container ausführen</title>
+      <link>https://dev.opsblog.de/2023/04/20/docker_powershell/</link>
+      <pubDate>Thu, 20 Apr 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/2023/04/20/docker_powershell/</guid>
+      <description>&lt;p&gt;Hier ein kurzer Befehl um ein Powershell-Script mit Docker unter Linux auszuführen:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run --rm --name PowerShell -v /home/sven/ps:/home/ps mcr.microsoft.com/powershell:lts-7.2-alpine-3.14 pwsh /home/ps/MyPowerShellScript.ps1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In diesem Fall wird ein Docker-Container mit dem Image &lt;code&gt;mcr.microsoft.com/powershell:lts-7.2-alpine-3.14&lt;/code&gt; gestartet in dem sich eine &lt;code&gt;Powershell 7.2&lt;/code&gt; befindet
+und das Script &lt;code&gt;MyPowerShellScript.ps1&lt;/code&gt; aus dem Host-Pfad &lt;code&gt;/home/sven/ps&lt;/code&gt; gestartet, welcher im Conatiner als &lt;code&gt;/home/ps&lt;/code&gt; gemountet wurde.&lt;br&gt;
+Der Container wird nach dem Ausführen wieder gelöscht (&lt;code&gt;--rm&lt;/code&gt;) und existiert nur solange das Script aufgerufen wird.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

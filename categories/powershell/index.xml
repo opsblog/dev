@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on dev.opsblog.de</title>
+    <link>https://dev.opsblog.de/categories/powershell/</link>
+    <description>Recent content in Powershell on dev.opsblog.de</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Thu, 20 Apr 2023 21:00:00 +0000</lastBuildDate><atom:link href="https://dev.opsblog.de/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Script-Ausgaben loggen</title>
+      <link>https://dev.opsblog.de/2023/04/20/powershell_transcript/</link>
+      <pubDate>Thu, 20 Apr 2023 21:00:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/2023/04/20/powershell_transcript/</guid>
+      <description>&lt;p&gt;Manchmal möchte man die Konsolen-Ausgabe des Scriptes gern weiterverarbeiten und z.b. als Log in eine Logdatei Schreiben.&lt;br&gt;
+Man könnte dazu jetzt z.B. jede Log-Ausgabe einzeln über eine Pipe in eine Text-Datei Schreiben - muss man aber nicht.&lt;br&gt;
+Eine einfachere Methode ist es das cmdlet &amp;ldquo;&lt;a href=&#34;https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3&#34;&gt;Start-Transcript&lt;/a&gt;&amp;rdquo; hierfür zu nutzen.&lt;/p&gt;
+&lt;p&gt;Hier ein Beispiel:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Start-Transcript&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Path&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;.\log.txt&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-UseMinimalHeader&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Write-Output&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hallo Welt!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Get-Date&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Stop-Transcript&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In diesem Beispiel wird die Ausgabe des &lt;code&gt;Write-Output&lt;/code&gt; und des &lt;code&gt;Get-Date&lt;/code&gt; in die Text-Datei &lt;code&gt;log.txt&lt;/code&gt; geschrieben.&lt;br&gt;
+Der Inhalt der &lt;code&gt;log.txt&lt;/code&gt; würde dann wie folgt aussehen:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**********************
+PowerShell transcript start
+Start time: 20230420210255
+**********************
+Transcript started, output file is .\log.txt
+Hallo Welt!
+
+Donnerstag, 20. April 2023 21:02:55
+**********************
+PowerShell transcript end
+End time: 20230420210255
+**********************
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Wetere Informationen zu Start-Transcript gibt es dort: &lt;a href=&#34;https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3&#34;&gt;Start-Transcript auf learn.microsoft.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Powershell unter Linux in Docker-Container ausführen</title>
+      <link>https://dev.opsblog.de/2023/04/20/docker_powershell/</link>
+      <pubDate>Thu, 20 Apr 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://dev.opsblog.de/2023/04/20/docker_powershell/</guid>
+      <description>&lt;p&gt;Hier ein kurzer Befehl um ein Powershell-Script mit Docker unter Linux auszuführen:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run --rm --name PowerShell -v /home/sven/ps:/home/ps mcr.microsoft.com/powershell:lts-7.2-alpine-3.14 pwsh /home/ps/MyPowerShellScript.ps1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In diesem Fall wird ein Docker-Container mit dem Image &lt;code&gt;mcr.microsoft.com/powershell:lts-7.2-alpine-3.14&lt;/code&gt; gestartet in dem sich eine &lt;code&gt;Powershell 7.2&lt;/code&gt; befindet
+und das Script &lt;code&gt;MyPowerShellScript.ps1&lt;/code&gt; aus dem Host-Pfad &lt;code&gt;/home/sven/ps&lt;/code&gt; gestartet, welcher im Conatiner als &lt;code&gt;/home/ps&lt;/code&gt; gemountet wurde.&lt;br&gt;
+Der Container wird nach dem Ausführen wieder gelöscht (&lt;code&gt;--rm&lt;/code&gt;) und existiert nur solange das Script aufgerufen wird.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

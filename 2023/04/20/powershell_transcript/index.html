@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de" data-theme=""><head>
-    <title> opsblog.de | Impressum </title>
+    <title> opsblog.de | Powershell: Script-Ausgaben loggen </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.105.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="/impressum/">
+    <link rel="canonical" href="/2023/04/20/powershell_transcript/">
 
     
     
@@ -52,12 +52,32 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dev.opsblog.de/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="Impressum"/>
-<meta name="twitter:description" content="Impressum Anschrift:
-Sven Schmalle
-Waller Heerstraße 184b
-28219 Bremen
-sven@opsblog.de"/>
+<meta name="twitter:title" content="Powershell: Script-Ausgaben loggen"/>
+<meta name="twitter:description" content="Manchmal möchte man die Konsolen-Ausgabe des Scriptes gern weiterverarbeiten und z.b. als Log in eine Logdatei Schreiben.
+Man könnte dazu jetzt z.B. jede Log-Ausgabe einzeln über eine Pipe in eine Text-Datei Schreiben - muss man aber nicht.
+Eine einfachere Methode ist es das cmdlet &ldquo;Start-Transcript&rdquo; hierfür zu nutzen.
+Hier ein Beispiel:
+Start-Transcript -Path &#34;.\log.txt&#34; -UseMinimalHeader
+
+Write-Output &#34;Hallo Welt!&#34;
+Get-Date
+
+Stop-Transcript
+In diesem Beispiel wird die Ausgabe des Write-Output und des Get-Date in die Text-Datei log.txt geschrieben.
+Der Inhalt der log.txt würde dann wie folgt aussehen:
+**********************
+PowerShell transcript start
+Start time: 20230420210255
+**********************
+Transcript started, output file is .\log.txt
+Hallo Welt!
+
+Donnerstag, 20. April 2023 21:02:55
+**********************
+PowerShell transcript end
+End time: 20230420210255
+**********************
+Wetere Informationen zu Start-Transcript gibt es dort: Start-Transcript auf learn.microsoft.com"/>
 
 
     
@@ -145,7 +165,7 @@ sven@opsblog.de"/>
                    title="">Datenschutz</a></li>
         
             
-            <li><a class="current"
+            <li><a 
                    href="/impressum/"
                         
                    title="">Impressum</a></li>
@@ -167,29 +187,61 @@ sven@opsblog.de"/>
         <div class="post-content">
             
             <div class="post-title">
-                <h3>Impressum</h3>
+                <h3>Powershell: Script-Ausgaben loggen</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                20.04.2023 - 21:00 Uhr
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">1 Minute zum Lesen</span>
+                    </div>
                 
             </div>
 
-            <h4 id="impressum">Impressum</h4>
-<p><strong>Anschrift:</strong><br>
-Sven Schmalle<br>
-Waller Heerstraße 184b<br>
-28219 Bremen<br>
-<a href="mailto:sven@opsblog.de">sven@opsblog.de</a><br>
-Telefon: auf anfrage</p>
-<p><strong>Rechtlicher Hinweis:</strong><br>
-Die meisten Inhalte meiner Homepage unterliegen dem deutschen Urheberrecht und sind mein Eigentum.<br>
-Die Benutzung ausserhalb meiner Homepage in jeglicher Form(Online sowie Print) ist untersagt, solange keine spezielle Erlaubnis von mir gegeben wurde. Informationen zur Nutzung meines Bildmaterials erhalten Sie per Email. Bilder anderer Personen auf meiner Homepage, sind deren Eigentum und nur mit ihrer Erlaubnis hier eingestellt.</p>
-</div>
+            <p>Manchmal möchte man die Konsolen-Ausgabe des Scriptes gern weiterverarbeiten und z.b. als Log in eine Logdatei Schreiben.<br>
+Man könnte dazu jetzt z.B. jede Log-Ausgabe einzeln über eine Pipe in eine Text-Datei Schreiben - muss man aber nicht.<br>
+Eine einfachere Methode ist es das cmdlet &ldquo;<a href="https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3">Start-Transcript</a>&rdquo; hierfür zu nutzen.</p>
+<p>Hier ein Beispiel:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Start-Transcript</span> <span class="n">-Path</span> <span class="s2">&#34;.\log.txt&#34;</span> <span class="n">-UseMinimalHeader</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Hallo Welt!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Date</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Stop-Transcript</span>
+</span></span></code></pre></div><p>In diesem Beispiel wird die Ausgabe des <code>Write-Output</code> und des <code>Get-Date</code> in die Text-Datei <code>log.txt</code> geschrieben.<br>
+Der Inhalt der <code>log.txt</code> würde dann wie folgt aussehen:</p>
+<pre tabindex="0"><code>**********************
+PowerShell transcript start
+Start time: 20230420210255
+**********************
+Transcript started, output file is .\log.txt
+Hallo Welt!
+
+Donnerstag, 20. April 2023 21:02:55
+**********************
+PowerShell transcript end
+End time: 20230420210255
+**********************
+</code></pre><p>Wetere Informationen zu Start-Transcript gibt es dort: <a href="https://learn.microsoft.com/de-de/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3">Start-Transcript auf learn.microsoft.com</a></p></div>
         <div class="post-footer">
             <div class="info">
-                
+                <span class="separator"><a class="category" href="/categories/powershell/">Powershell</a></span>
                 
             </div>
         </div>
 		
         
+			<script src="https://utteranc.es/client.js"
+					repo="opsblog/dev"
+					issue-term="pathname"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+			
+			<div id="hashover"></div>
     </div>
 
 

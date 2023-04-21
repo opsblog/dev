@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de" data-theme=""><head>
-    <title> opsblog.de | Impressum </title>
+    <title> opsblog.de | Powershell unter Linux in Docker-Container ausführen </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.105.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="/impressum/">
+    <link rel="canonical" href="/2023/04/20/docker_powershell/">
 
     
     
@@ -52,12 +52,12 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dev.opsblog.de/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="Impressum"/>
-<meta name="twitter:description" content="Impressum Anschrift:
-Sven Schmalle
-Waller Heerstraße 184b
-28219 Bremen
-sven@opsblog.de"/>
+<meta name="twitter:title" content="Powershell unter Linux in Docker-Container ausführen"/>
+<meta name="twitter:description" content="Hier ein kurzer Befehl um ein Powershell-Script mit Docker unter Linux auszuführen:
+docker run --rm --name PowerShell -v /home/sven/ps:/home/ps mcr.microsoft.com/powershell:lts-7.2-alpine-3.14 pwsh /home/ps/MyPowerShellScript.ps1
+In diesem Fall wird ein Docker-Container mit dem Image mcr.microsoft.com/powershell:lts-7.2-alpine-3.14 gestartet in dem sich eine Powershell 7.2 befindet
+und das Script MyPowerShellScript.ps1 aus dem Host-Pfad /home/sven/ps gestartet, welcher im Conatiner als /home/ps gemountet wurde.
+Der Container wird nach dem Ausführen wieder gelöscht (--rm) und existiert nur solange das Script aufgerufen wird."/>
 
 
     
@@ -145,7 +145,7 @@ sven@opsblog.de"/>
                    title="">Datenschutz</a></li>
         
             
-            <li><a class="current"
+            <li><a 
                    href="/impressum/"
                         
                    title="">Impressum</a></li>
@@ -167,29 +167,41 @@ sven@opsblog.de"/>
         <div class="post-content">
             
             <div class="post-title">
-                <h3>Impressum</h3>
+                <h3>Powershell unter Linux in Docker-Container ausführen</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                20.04.2023 - 20:00 Uhr
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">1 Minute zum Lesen</span>
+                    </div>
                 
             </div>
 
-            <h4 id="impressum">Impressum</h4>
-<p><strong>Anschrift:</strong><br>
-Sven Schmalle<br>
-Waller Heerstraße 184b<br>
-28219 Bremen<br>
-<a href="mailto:sven@opsblog.de">sven@opsblog.de</a><br>
-Telefon: auf anfrage</p>
-<p><strong>Rechtlicher Hinweis:</strong><br>
-Die meisten Inhalte meiner Homepage unterliegen dem deutschen Urheberrecht und sind mein Eigentum.<br>
-Die Benutzung ausserhalb meiner Homepage in jeglicher Form(Online sowie Print) ist untersagt, solange keine spezielle Erlaubnis von mir gegeben wurde. Informationen zur Nutzung meines Bildmaterials erhalten Sie per Email. Bilder anderer Personen auf meiner Homepage, sind deren Eigentum und nur mit ihrer Erlaubnis hier eingestellt.</p>
-</div>
+            <p>Hier ein kurzer Befehl um ein Powershell-Script mit Docker unter Linux auszuführen:</p>
+<pre tabindex="0"><code>docker run --rm --name PowerShell -v /home/sven/ps:/home/ps mcr.microsoft.com/powershell:lts-7.2-alpine-3.14 pwsh /home/ps/MyPowerShellScript.ps1
+</code></pre><p>In diesem Fall wird ein Docker-Container mit dem Image <code>mcr.microsoft.com/powershell:lts-7.2-alpine-3.14</code> gestartet in dem sich eine <code>Powershell 7.2</code> befindet
+und das Script <code>MyPowerShellScript.ps1</code> aus dem Host-Pfad <code>/home/sven/ps</code> gestartet, welcher im Conatiner als <code>/home/ps</code> gemountet wurde.<br>
+Der Container wird nach dem Ausführen wieder gelöscht (<code>--rm</code>) und existiert nur solange das Script aufgerufen wird.</p></div>
         <div class="post-footer">
             <div class="info">
-                
+                <span class="separator"><a class="category" href="/categories/linux/">Linux</a><a class="category" href="/categories/docker/">Docker</a><a class="category" href="/categories/powershell/">Powershell</a></span>
                 
             </div>
         </div>
 		
         
+			<script src="https://utteranc.es/client.js"
+					repo="opsblog/dev"
+					issue-term="pathname"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+			
+			<div id="hashover"></div>
     </div>
 
 
